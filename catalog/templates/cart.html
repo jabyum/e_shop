@@ -1,0 +1,11 @@
+<b>Ваша корзина</b> <br><br><br>
+{% for user_cart in cart %}
+Название: {{ user_cart.user_product }} <br>
+Количество: {{ user_cart.user_product_quantity }} <br>
+<form action="/cart" method="post">
+{% csrf_token %}
+    <button>Удалить</button>
+</form>
+
+<hr>
+{% endfor %}
